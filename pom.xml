@@ -19,6 +19,9 @@
 	</parent>
 
 	<modules>
+		<module>demo-projA</module>
+		<module>demo-projB</module>
+		<module>demo-projC</module>
 		<module>demo-service</module>
 	</modules>
 
