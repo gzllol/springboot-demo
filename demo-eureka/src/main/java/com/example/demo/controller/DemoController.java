@@ -9,7 +9,7 @@ public class DemoController {
     @RequestMapping("/hello")
     String home() {
         try {
-            Thread.sleep(20000);
+            Thread.sleep(3000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
