@@ -42,7 +42,37 @@
 		</dependency>
 	</dependencies>
 
+	<profiles>
+		<profile>
+			<id>dev</id>
+			<properties>
+				<env>src/main/resources/dev</env>
+			</properties>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+		</profile>
+		<profile>
+			<id>online</id>
+			<properties>
+				<env>src/main/resources/online</env>
+			</properties>
+		</profile>
+	</profiles>
+
 	<build>
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<excludes>
+					<exclude>dev/**</exclude>
+					<exclude>online/**</exclude>
+				</excludes>
+			</resource>
+			<resource>
+				<directory>${env}</directory>
+			</resource>
+		</resources>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
